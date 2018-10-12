@@ -14,12 +14,18 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/zip/:zipcode', (req, res) => {
-  // fill in...
+app.get('/zip/:zipcode', (req, res, next) => {
+  const zipInfo = zipdb.byZip[req.params.zipcode];
+
+  if(zipInfo) {
+    res.json(zipInfo);
+  } else {
+    res.status(404).send("Not Found");
+  }
 });
 
 
-app.get('/city/:cityname', (req, res) => {
+app.get('/city/:cityname', (req, res, next) => {
   // fill in...
 });
 
