@@ -26,7 +26,13 @@ app.get('/zip/:zipcode', (req, res, next) => {
 
 
 app.get('/city/:cityname', (req, res, next) => {
-  // fill in...
+  const cityInfo = zipdb.byCity[req.params.cityname];
+
+  if(cityInfo) {
+    res.json(cityInfo);
+  } else {
+    res.status(404).send("Not Found");
+  }
 });
 
 
