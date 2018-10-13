@@ -20,7 +20,8 @@ app.get('/zip/:zipcode', (req, res, next) => {
   if(zipInfo) {
     res.json(zipInfo);
   } else {
-    res.status(404).send("Not Found");
+    //res.status(404).send("Not Found");
+    res.sendStatus(404);
   }
 });
 
@@ -31,7 +32,8 @@ app.get('/city/:cityname', (req, res, next) => {
   if(cityInfo) {
     res.json(cityInfo);
   } else {
-    res.status(404).send("Not Found");
+    //res.status(404).send("Not Found");
+    res.sendStatus(404);
   }
 });
 
