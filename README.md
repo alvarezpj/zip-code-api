@@ -11,3 +11,5 @@ To start the API locally, change directories into ```zip-code-api``` and run ```
 
 * localhost:8000/zip/11377
 * localhost:8000/city/WOODSIDE
+
+> note: for the city endpoint, the name of cities must be provided in all caps.
